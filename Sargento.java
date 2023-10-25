@@ -59,7 +59,7 @@ public class Sargento {
         }
     }
 
-    public void setImediato(Sargento imediato) {
+    public void setImediato(Tenente imediato) {
         if (!(Objects.equals(this.imediato, imediato))) {
             this.imediato = imediato;
             this.imediato.addSubordinado(this);
