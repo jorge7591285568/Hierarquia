@@ -1,4 +1,3 @@
-package Herarquia;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ public class Capitao {
     private int numero;
     private int TempoServico;
     private ArrayList<Tenente> subordinados;
-    private Object imediato;
+   
 
     public Capitao(String nome, int numero, int TempoServico) {
         this.nome = nome;
@@ -37,14 +36,6 @@ public class Capitao {
         return TempoServico;
     }
 
-    
-    public void setImediato(Tenente imediato, Object object) {
-        if (!(Objects.equals(object, imediato))) {
-          this.imediato = imediato;
-          if ((Object) this.imediato).addsubordinados(imediato);
-        }
-      }
-
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -60,6 +51,14 @@ public class Capitao {
     public void setSubordinados(ArrayList<Tenente> subordinados) {
         this.subordinados = subordinados;
     }
+ // TODO fazer remoção de subordinado na troca do imediato
+ public void addSubordinado(Tenente tenente) {
+    tenente.setImediato(this);
+    if (!this.subordinados.contains(tenente)) {
+        subordinados.add(tenente);
+    }
+}
+
     @Override
     public boolean equals(Object o) {
         if (this == o)

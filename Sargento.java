@@ -1,4 +1,3 @@
-package Herarquia;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,22 +5,25 @@ import java.util.List;
 import java.util.Objects;
 
 public class Sargento {
+    public static final String getimediato = null;
     private String nome;
     private int numero;
     private int tempoServico;
-    private Cabo imediato;
+    private Tenente imediato;
+    private ArrayList<Cabo> subordinados;
 
     public Sargento(String nome, int numero, int tempoServico) {
         this.nome = nome;
         this.numero = numero;
-        this.tempoServico = 0;
+        this.tempoServico = 3;
+        this.subordinados = new ArrayList<>();
     }
 
     public int getNumero() {
         return numero;
     }
 
-    public Cabo getImediato() {
+    public Tenente getImediato() {
         return imediato;
     }
 
@@ -36,6 +38,7 @@ public class Sargento {
     public void incrementarTempoServico() {
         tempoServico++;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -44,18 +47,15 @@ public class Sargento {
         this.numero = numero;
     }
 
-    public void setTempoServico(int TempoServico) {
-        this.TempoServico = TempoServico;
+    public List<Cabo> getSubordinados() {
+        return Collections.unmodifiableList(subordinados);
     }
 
-    public void setSubordinados(ArrayList<Tenente> subordinados) {
-        this.subordinados = subordinados;
-    }
     // TODO fazer remoção de subordinado na troca do imediato
-    public void setImediato(Tenente imediato) {
-        if (!(Objects.equals(this.imediato, imediato))) {
-            this.imediato = imediato;
-            //this.imediato.addSubordinados(this);
+    public void addSubordinado(Cabo cabo) {
+        cabo.setImediato(this);
+        if (!this.subordinados.contains(cabo)) {
+            subordinados.add(cabo);
         }
     }
 

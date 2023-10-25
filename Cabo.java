@@ -1,4 +1,3 @@
-package Herarquia;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -39,40 +38,39 @@ public class Cabo {
   public int getTempoServico() {
     return TempoServico;
   }
+
   public void setNome(String nome) {
     this.nome = nome;
-}
+  }
 
-public void setNumero(int numero) {
+  public void setNumero(int numero) {
     this.numero = numero;
-}
+  }
 
-public void setTempoServico(int TempoServico) {
+  public void setTempoServico(int TempoServico) {
     this.TempoServico = TempoServico;
-}
+  }
 
-public void setSubordinados(ArrayList<Sargento> subordinados) {
-    this.subordinados = subordinados;
-}
-
-  public void setImediato(Sargento imediato) {
-    if (!(Objects.equals(this.imediato, imediato))) {
-      this.imediato = imediato;
-      //this.imediato.addsubordinados(imediato);
+  // TODO fazer remoção de subordinado na troca do imediato
+  public void addSubordinado(Soldado soldado) {
+    soldado.setImediato(this);
+    if (!this.subordinados.contains(soldado)) {
+      subordinados.add(soldado);
     }
   }
+
   @Override
   public boolean equals(Object o) {
-      if (this == o)
-          return true;
-      if (o == null || getClass() != o.getClass())
-          return false;
-      Cabo cabo = (Cabo) o;
-      return numero == cabo.numero && Objects.equals(nome, cabo.nome);
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    Cabo cabo = (Cabo) o;
+    return numero == cabo.numero && Objects.equals(nome, cabo.nome);
   }
 
   @Override
   public int hashCode() {
-      return Objects.hash(nome, numero, TempoServico);
+    return Objects.hash(nome, numero, TempoServico);
   }
 }
