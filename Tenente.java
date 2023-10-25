@@ -1,5 +1,4 @@
 
-
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -19,6 +18,10 @@ public class Tenente {
         this.subordinados = new ArrayList<>();
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public int getNumero() {
         return numero;
     }
@@ -27,16 +30,12 @@ public class Tenente {
         return imediato;
     }
 
-    public String getNome() {
-        return nome;
+    public int getTempoServico() {
+        return TempoServico;
     }
 
     public List<Sargento> getSubordinados() {
         return Collections.unmodifiableList(subordinados);
-    }
-    
-    public int getTempoServico() {
-        return TempoServico;
     }
 
     public void setNome(String nome) {
@@ -47,20 +46,13 @@ public class Tenente {
         this.numero = numero;
     }
 
-    public void setTempoServico(int TempoServico) {
-        this.TempoServico = TempoServico;
-    }
-
-    
-
-     // TODO fazer remoção de subordinado na troca do imediato
-     public void addSubordinado(Sargento sargento) {
-        sargento.setImediato(this);
+    // TODO fazer remoção de subordinado na troca do imediato
+    public void addSubordinado(Sargento sargento) {
+        sargento.setImediato(This);
         if (!this.subordinados.contains(sargento)) {
             subordinados.add(sargento);
         }
     }
-
 
     public void setImediato(Capitao capitao) {
         if (!(Objects.equals(this.imediato, imediato))) {

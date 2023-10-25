@@ -12,7 +12,7 @@ import java.util.Collections;
 
 public class Exercito {
 
-        // private static final char[] subordinados = null;
+
 
         public static void main(String[] args) {
 
@@ -57,12 +57,9 @@ public class Exercito {
                 System.out.println(
                                 "O imediato do sargento é o " + sargento.getNome() + " é o tenente "
                                                 + tenente.getImediato().getNome());
-                System.out.println(
-                                "O imediato do tenente é o " + tenente.getNome + " é o capitao "
-                                                + capitao.getImediato().getNome());
-
-                System.out.println(Subordinados);
-
+                /*System.out.println(
+                                "O imediato do tenente é o " + Tenente.getNome + " é o capitao "
+                                                + Capitao.getImediato().getNome());*/
         }
 
 }
