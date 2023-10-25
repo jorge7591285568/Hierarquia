@@ -61,6 +61,14 @@ public class Tenente {
         }
     }
 
+
+    public void setImediato(Capitao capitao) {
+        if (!(Objects.equals(this.imediato, imediato))) {
+            this.imediato = imediato;
+            this.imediato.addSubordinado(this);
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)

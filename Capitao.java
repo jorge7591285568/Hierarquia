@@ -10,7 +10,6 @@ public class Capitao {
     private int numero;
     private int TempoServico;
     private ArrayList<Tenente> subordinados;
-   
 
     public Capitao(String nome, int numero, int TempoServico) {
         this.nome = nome;
@@ -22,7 +21,6 @@ public class Capitao {
     public int getNumero() {
         return numero;
     }
-
 
     public String getNome() {
         return nome;
@@ -51,21 +49,22 @@ public class Capitao {
     public void setSubordinados(ArrayList<Tenente> subordinados) {
         this.subordinados = subordinados;
     }
- // TODO fazer remoção de subordinado na troca do imediato
- public void addSubordinado(Tenente tenente) {
-    tenente.setImediato(this);
-    if (!this.subordinados.contains(tenente)) {
-        subordinados.add(tenente);
-    }
-}
 
-    @Override
+    // TODO fazer remoção de subordinado na troca do imediato
+    public void addSubordinado(Tenente tenente) {
+        tenente.setImediato(this);
+        if (!this.subordinados.contains(tenente)) {
+            subordinados.add(tenente);
+        }
+    }
+
+        @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;
         if (o == null || getClass() != o.getClass())
             return false;
-    Capitao capitao = (Capitao) o;
+        Capitao capitao = (Capitao) o;
         return numero == capitao.numero && Objects.equals(nome, capitao.nome);
     }
 

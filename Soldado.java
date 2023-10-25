@@ -62,6 +62,13 @@ public class Soldado {
         }
     }
 
+    public void setImediato(Cabo imediato) {
+        if (!(Objects.equals(this.imediato, imediato))) {
+            this.imediato = imediato;
+            this.imediato.addSubordinado(this);
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)
