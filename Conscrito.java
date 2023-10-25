@@ -1,3 +1,5 @@
+package Herarquia;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -8,11 +10,14 @@ public class Conscrito {
     private int numero;
     private int tempoServico;
     private Cabo imediato;
+    private ArrayList<Soldado> subordinados;
 
     public Conscrito(String nome, int numero,int tempoServico) {
         this.nome = nome;
         this.numero = numero;
         this.tempoServico = 0;
+        this.subordinados = new ArrayList<>;
+
     }
 
     public int getNumero() {
@@ -35,6 +40,21 @@ public class Conscrito {
         tempoServico++;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setTempoServico(int TempoServico) {
+        this.TempoServico = TempoServico;
+    }
+
+    public void setSubordinados(ArrayList<Soldado> subordinados) {
+        this.subordinados = subordinados;
+    }
     // TODO fazer remoção de subordinado na troca do imediato
     public void setImediato(Cabo imediato) {
         if (!(Objects.equals(this.imediato, imediato))) {

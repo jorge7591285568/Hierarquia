@@ -1,3 +1,5 @@
+package Herarquia;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -34,10 +36,12 @@ public class Capitao {
     public int getTempoServico() {
         return TempoServico;
     }
+
+    
     public void setImediato(Tenente imediato, Object object) {
         if (!(Objects.equals(object, imediato))) {
           this.imediato = imediato;
-          //((Object) this.imediato).addsubordinados(imediato);
+          if ((Object) this.imediato).addsubordinados(imediato);
         }
       }
 

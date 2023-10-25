@@ -1,3 +1,5 @@
+package Herarquia;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -37,12 +39,29 @@ public class Soldado {
         return Collections.unmodifiableList(subordinados);
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setTempoServico(int TempoServico) {
+        this.TempoServico = TempoServico;
+    }
+
+    public void setSubordinados(ArrayList<Cabo> subordinados) {
+        this.subordinados = subordinados;
+    }
+
     public void setImediato(Cabo imediato) {
         if (!(Objects.equals(this.imediato, imediato))) {
             this.imediato = imediato;
-            //this.imediato.addsubordinados(imediato);
+            // this.imediato.addsubordinados(imediato);
         }
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)

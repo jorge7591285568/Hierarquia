@@ -1,3 +1,6 @@
+
+package Herarquia;
+
 /* Modele uma simplificação da hierarquia do Exército Brasileiro. 
  Existem diferentes patentes militares, como Soldado, Cabo, Sargento, Tenente e Capitão.
 Cada patente tem atributos como nome, número de identificação e tempo de serviço.
@@ -12,10 +15,11 @@ import java.util.Collections;
 
 public class Exercito {
 
-    private static final char[] subordinados = null;
+    //private static final char[] subordinados = null;
 
     public static void main(String[] args) {
 
+        ArrayList<Subordinado> subordinados = new ArrayList<Subordinados>();
         Conscrito conscrito = new conscrito();
         conscrito.nome("Soldado: jorge", 1, 0);
         Soldado soldado = new soldado();
@@ -28,20 +32,20 @@ public class Exercito {
         tenente.nome("Capitao: jorge4", 5, 4);
         Capitao capitao = new capitao();
         capitao.imediato("O proprio Capitao: jorge4", 6, 5);
-
+ 
         
-        /*soldado.addsubordinados(conscrito);
+        soldado.addsubordinados(conscrito);
         cabo.addsubordinados(soldado);
         sargento.addsubordinados(cabo);
         tenente.addSubordinados(sargento);
-        capitao.addsubordinados(tenente);*/
+        capitao.addsubordinados(tenente);
          
 
-        conscrito.addImediato(soldado);
+        /*conscrito.addImediato(soldado);
         soldado.addImediato(cabo);
         cabo.addImediato(sargento);
         sargento.addImediato(tenente);
-        tenente.addImediato(capitao);
+        tenente.addImediato(capitao);*/
 
         System.out.println(
                 "O imediato do conscrito é o " + conscrito.getnome + " é o Soldado " + soldado.getimediato.getnome());

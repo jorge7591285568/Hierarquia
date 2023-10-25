@@ -1,9 +1,8 @@
+package Herarquia;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Objects;
-
-import javax.imageio.plugins.tiff.TIFFTag;
-
 import java.util.Collections;
 
 public class Tenente {
@@ -40,13 +39,30 @@ public class Tenente {
         return TempoServico;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setTempoServico(int TempoServico) {
+        this.TempoServico = TempoServico;
+    }
+
+    public void setSubordinados(ArrayList<Capitao> subordinados) {
+        this.subordinados = subordinados;
+    }
+
     public void setImediato(Sargento imediato) {
         if (!(Objects.equals(this.imediato, imediato))) {
-          this.imediato = imediato;
-          //this.imediato.addsubordinados(imediato);
+            this.imediato = imediato;
+            // this.imediato.addsubordinados(this);
         }
-      }
-       @Override
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;
@@ -58,6 +74,6 @@ public class Tenente {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, numero,TempoServico);
+        return Objects.hash(nome, numero, TempoServico);
     }
 }
