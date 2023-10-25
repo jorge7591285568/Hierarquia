@@ -50,9 +50,11 @@ public class Conscrito {
 
    
    
-    // TODO fazer remoção de subordinado na troca do imediato
     public void setImediato(Soldado imediato) {
         if (!(Objects.equals(this.imediato, imediato))) {
+            if(this.imediato != null){
+                this.imediato.removerSubordinado(this);
+            }            
             this.imediato = imediato;
             this.imediato.addSubordinado(this);
         }

@@ -5,14 +5,7 @@ Cada patente tem atributos como nome, número de identificação e tempo de serv
 Os soldados reportam aos cabos, os cabos aos sargentos e assim por diante. 
 Implemente métodos para listar os subordinados de um militar em uma patente superior e seu superior imediato.*/
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Collections;
-
 public class Exercito {
-
-
 
         public static void main(String[] args) {
 
@@ -41,25 +34,36 @@ public class Exercito {
                 sargento.setImediato(tenente);
                 tenente.setImediato(capitao);
 
-                soldado.getSubordinados().add(conscrito);
-                cabo.getSubordinados().add(soldado);
-                sargento.getSubordinados().add(cabo);
-                tenente.getSubordinados().add(sargento);
-                capitao.getSubordinados().add(tenente);
+                soldado.addSubordinado(conscrito);
+                cabo.addSubordinado(soldado);
+                sargento.addSubordinado(cabo);
+                tenente.addSubordinado(sargento);
+                capitao.addSubordinado(tenente);
 
                 System.out.println(
                                 "O imediato do conscrito é o " + conscrito.getNome() + " é o Soldado "
-                                                + soldado.getImediato().getNome());
-                System.out.println("O imediato do soldado é o " + soldado.getNome()+ " é o  cabo "
-                                + cabo.getImediato().getNome());
+                                                + conscrito.getImediato().getNome());
+                System.out.println("O imediato do soldado é o " + soldado.getNome() + " é o  cabo "
+                                + soldado.getImediato().getNome());
                 System.out.println("O imediato do cabo é o " + cabo.getNome() + " é o sargento"
-                                + sargento.getImediato().getNome());
+                                + cabo.getImediato().getNome());
                 System.out.println(
                                 "O imediato do sargento é o " + sargento.getNome() + " é o tenente "
-                                                + tenente.getImediato().getNome());
-                /*System.out.println(
-                                "O imediato do tenente é o " + Tenente.getNome + " é o capitao "
-                                                + Capitao.getImediato().getNome());*/
+                                                + sargento.getImediato().getNome());
+                
+                  System.out.println(
+                  "O imediato do tenente é o " + tenente.getNome() + " é o capitao "
+                  + tenente.getImediato().getNome());
+
+
+                Soldado soldado2 = new Soldado("Soldado: jorge2", 2, 1);                  
+
+                System.out.println(soldado);
+                System.out.println(soldado2);
+                conscrito.setImediato(soldado2);
+                System.out.println(soldado);
+                System.out.println(soldado2);
+                 
         }
 
 }
