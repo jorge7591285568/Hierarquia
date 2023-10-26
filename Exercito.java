@@ -39,19 +39,34 @@ public class Exercito {
                 tenente.addSubordinado(sargento);
                 capitao.addSubordinado(tenente);
 
-                System.out.println(
-                                "O imediato do conscrito é o " + conscrito.getNome() + " é o Soldado "
-                                                + soldado.getImediato().getNome());
-                System.out.println("O imediato do soldado é o " + soldado.getNome()+ " é o  cabo "
-                                + cabo.getImediato().getNome());
-                System.out.println("O imediato do cabo é o " + cabo.getNome() + " é o sargento"
-                                + sargento.getImediato().getNome());
-                System.out.println(
-                                "O imediato do sargento é o " + sargento.getNome() + " é o tenente "
-                                                + tenente.getImediato().getNome());
-                /*System.out.println(
-                                "O imediato do tenente é o " + Tenente.getNome + " é o capitao "
-                                                + Capitao.getImediato().getNome());*/
+                System.out.println();
+
+                System.out.println("O Conscrito não tem imediato:  " + conscrito.getNome());
+
+                System.out.println("O imediato do conscrito é o " + soldado.getNome());
+
+                System.out.println("O imediato do soldado é o " + cabo.getNome());
+
+                System.out.println("O imediato do cabo é o " + sargento.getNome());
+
+                System.out.println("O imediato do sargento é o " + tenente.getNome());
+
+                System.out.println("O imediato do tenente " + capitao.getNome());
+
+                System.out.println("O capitao nao tem superior: " + capitao.getNome());
+
+                Soldado soldado2 = new Soldado("Soldado: Miguel", 2, 1);
+                System.out.println();
+                System.out.println("***** Aqui trocamos o subordinado de superior *****");
+                System.out.println(soldado);
+                System.out.println(soldado2);
+                System.out.println();
+                conscrito.setImediato(soldado2);
+                System.out.println("***** Aqui mostramos a troca do subordinado de superior *****");
+                System.out.println(soldado);
+                System.out.println(soldado2);
+                System.out.println();
+
         }
 
 }
