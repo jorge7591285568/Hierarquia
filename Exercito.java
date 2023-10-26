@@ -60,15 +60,14 @@ public class Exercito {
 
                 System.out.println("O capitao nao tem superior: " + capitao.getNome());
 
-                Soldado soldado2 = new Soldado("Soldado: jorge2", 2, 1);
+                Soldado soldado2 = new Soldado("Soldado: Miguel", 2, 1);
                 System.out.println();
-                System.out.println("Aqui trocamos o subordinado de superior");
+                System.out.println("***** Aqui trocamos o subordinado de superior *****");
                 System.out.println(soldado);
                 System.out.println(soldado2);
                 System.out.println();
                 conscrito.setImediato(soldado2);
-                System.out.println();
-                System.out.println("Aqui mostramos a troca do subordinado de superior");
+                System.out.println("***** Aqui mostramos a troca do subordinado de superior *****");
                 System.out.println(soldado);
                 System.out.println(soldado2);
                 System.out.println();
