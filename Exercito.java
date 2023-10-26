@@ -12,11 +12,8 @@ import java.util.Collections;
 
 public class Exercito {
 
-
-
         public static void main(String[] args) {
 
-                // ArrayList<Subordinado> subordinados = new ArrayList<Subordinados>();
                 Conscrito conscrito = new Conscrito("Conscrito: jorge", 1, 0);
 
                 Soldado soldado = new Soldado("Soldado: jorge1", 2, 1);
@@ -27,7 +24,7 @@ public class Exercito {
 
                 Tenente tenente = new Tenente("Tenente: jorge4", 5, 4);
 
-                Capitao capitao = new Capitao("O proprio Capitao: jorge4", 6, 5);
+                Capitao capitao = new Capitao("Capitao: jorge5", 6, 5);
 
                 soldado.addSubordinado(conscrito);
                 cabo.addSubordinado(soldado);
@@ -41,25 +38,41 @@ public class Exercito {
                 sargento.setImediato(tenente);
                 tenente.setImediato(capitao);
 
-                soldado.getSubordinados().add(conscrito);
-                cabo.getSubordinados().add(soldado);
-                sargento.getSubordinados().add(cabo);
-                tenente.getSubordinados().add(sargento);
-                capitao.getSubordinados().add(tenente);
+                soldado.addSubordinado(conscrito);
+                cabo.addSubordinado(soldado);
+                sargento.addSubordinado(cabo);
+                tenente.addSubordinado(sargento);
+                capitao.addSubordinado(tenente);
 
-                System.out.println(
-                                "O imediato do conscrito é o " + conscrito.getNome() + " é o Soldado "
-                                                + soldado.getImediato().getNome());
-                System.out.println("O imediato do soldado é o " + soldado.getNome()+ " é o  cabo "
-                                + cabo.getImediato().getNome());
-                System.out.println("O imediato do cabo é o " + cabo.getNome() + " é o sargento"
-                                + sargento.getImediato().getNome());
-                System.out.println(
-                                "O imediato do sargento é o " + sargento.getNome() + " é o tenente "
-                                                + tenente.getImediato().getNome());
-                /*System.out.println(
-                                "O imediato do tenente é o " + Tenente.getNome + " é o capitao "
-                                                + Capitao.getImediato().getNome());*/
+                System.out.println();
+
+                System.out.println("O Conscrito não tem imediato:  " + conscrito.getNome());
+
+                System.out.println("O imediato do conscrito é o " + soldado.getNome());
+
+                System.out.println("O imediato do soldado é o " + cabo.getNome());
+
+                System.out.println("O imediato do cabo é o " + sargento.getNome());
+
+                System.out.println("O imediato do sargento é o " + tenente.getNome());
+
+                System.out.println("O imediato do tenente " + capitao.getNome());
+
+                System.out.println("O capitao nao tem superior: " + capitao.getNome());
+
+                Soldado soldado2 = new Soldado("Soldado: jorge2", 2, 1);
+                System.out.println();
+                System.out.println("Aqui trocamos o subordinado de superior");
+                System.out.println(soldado);
+                System.out.println(soldado2);
+                System.out.println();
+                conscrito.setImediato(soldado2);
+                System.out.println();
+                System.out.println("Aqui mostramos a troca do subordinado de superior");
+                System.out.println(soldado);
+                System.out.println(soldado2);
+                System.out.println();
+
         }
 
 }

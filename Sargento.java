@@ -51,7 +51,7 @@ public class Sargento {
         return Collections.unmodifiableList(subordinados);
     }
 
-    // TODO fazer remoção de subordinado na troca do imediato
+  
     public void addSubordinado(Cabo cabo) {
         cabo.setImediato(this);
         if (!this.subordinados.contains(cabo)) {
@@ -59,7 +59,7 @@ public class Sargento {
         }
     }
 
-    public void setImediato(Sargento imediato) {
+    public void setImediato(Tenente imediato) {
         if (!(Objects.equals(this.imediato, imediato))) {
             this.imediato = imediato;
             this.imediato.addSubordinado(this);

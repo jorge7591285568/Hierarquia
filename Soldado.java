@@ -83,4 +83,15 @@ public class Soldado {
     public int hashCode() {
         return Objects.hash(nome, numero);
     }
+
+    @Override
+    public String toString() {
+        return "Soldado [nome = " + nome + " Quantidade subordinados = " + subordinados.size() + "]";
+    }
+
+    public void removerSubordinado(Conscrito conscrito) {
+        if (this.subordinados.contains(conscrito)) {
+            subordinados.remove(conscrito);
+        }
+    }
 }

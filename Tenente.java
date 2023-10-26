@@ -48,13 +48,13 @@ public class Tenente {
 
     // TODO fazer remoção de subordinado na troca do imediato
     public void addSubordinado(Sargento sargento) {
-        sargento.setImediato(This);
+        sargento.setImediato(this);
         if (!this.subordinados.contains(sargento)) {
             subordinados.add(sargento);
         }
     }
 
-    public void setImediato(Capitao capitao) {
+    public void setImediato(Capitao imediato) {
         if (!(Objects.equals(this.imediato, imediato))) {
             this.imediato = imediato;
             this.imediato.addSubordinado(this);
